@@ -41,7 +41,7 @@ function render_sub_link($field_name = 'link', $classes = '')
         return false;
     }
 
-    $html = "<a class='{$classes}' href='{$link['url']}' ><span>{$link['title']}</span></a>";
+    $html = "<a class='{$classes}' href='{$link['url']}' target='{$link['target']}'><span>{$link['title']}</span></a>";
     return $html;
 }
 

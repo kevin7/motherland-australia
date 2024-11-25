@@ -13,4 +13,11 @@
             color:$color-white;
         }
     }
+    &--green {
+        background-color: $color-green-200;
+        color:$color-white;
+        a {
+            color:$color-white;
+        }
+    }
 }

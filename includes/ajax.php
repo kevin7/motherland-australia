@@ -190,7 +190,7 @@ function search() {
 }
 
 
-function returnSorting($args = array(), $data_sort) {
+function returnSorting($args = array(), $data_sort = 'new') {
   if ($data_sort) {
     switch ($data_sort) {
 
@@ -258,3 +258,68 @@ function custom_ajax_login() {
 // Register the AJAX actions for logged-in and logged-out users
 add_action('wp_ajax_custom_ajax_login', 'custom_ajax_login');
 add_action('wp_ajax_nopriv_custom_ajax_login', 'custom_ajax_login');
+
+
+
+
+function get_program_menu() {
+
+    $id = isset($_POST['id']) ? intval($_POST['id']) : false;
+    $current_user = wp_get_current_user();
+    $history = get_field('history', 'user_' . $current_user->ID) ? get_field('history', 'user_' . $current_user->ID) : [];
+
+    if (!in_array($id, $history)) {
+        array_push($history, $id);
+        update_field('history', $history, 'user_' . $current_user->ID);
+    }
+
+    if ($id) {
+        ob_start();
+        ?>
+        <?php if ( have_rows('navigation', $id)) : ?>
+                                    
+            <?php while( have_rows('navigation', $id) ) : 
+                    the_row(); 
+                    $program = get_sub_field('program');    
+                    $caption = get_field('caption', $program->ID);
+                    $url = get_the_permalink($program->ID);
+                    $ptitle = $program->post_title;
+                    $locked = in_array($program->ID, $history) ? true : false;
+                ?>
+                <?php if ($program) :  ?>
+                <li>
+                    <a href="<?=!$locked ? '#' : $url?>" class="<?=!$locked ? 'locked' : ''?>">
+                        <figcaption><?=$caption?></figcaption>
+                        <?php if ($locked) :  ?>
+                            <span><?=$ptitle?></span>
+                        <?php endif; ?>
+                    </a>
+                </li>
+                <?php endif; ?>
+        
+            <?php endwhile; ?>
+        
+        <?php endif; ?>
+        
+        <li class="logout">
+            <a href="<?php echo wp_logout_url( '/login/'); ?>">
+                Logout
+            </a>
+        </li>
+        <?php
+        $output = ob_get_contents();
+        ob_end_clean();
+    }
+
+    echo $output;
+
+    wp_die();
+}
+
+function get_program_menu_nopriv() {
+    wp_die();
+}
+
+// Register the AJAX actions for logged-in and logged-out users
+add_action('wp_ajax_get_program_menu', 'get_program_menu');
+add_action('wp_ajax_nopriv_get_program_menu', 'get_program_menu_nopriv');

@@ -24,3 +24,4 @@ import './components/password-toggle';
 
 //---- theme -----
 import './components/blog';
+import './components/program-nav'; 
