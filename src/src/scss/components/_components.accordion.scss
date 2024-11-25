@@ -1,0 +1,45 @@
+.c-accordion {
+    $c: &;
+
+    border-top: 1px solid $color-grey;
+
+    &__item {
+        &--is-active {
+            #{$c}__header {
+                &:after {
+                    transform:translateY(-50%) scaleY(-1) !important;
+                }
+            }
+        }
+    }
+
+    &__header {
+        padding: 0.5rem 0;
+        font-size: 1rem;
+        position: relative;
+        color:$color-secondary;
+        font-weight:700;
+        &:after {
+            content: '\e802';
+            display: block;
+            font-family:'fontello';
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            line-height:10px;
+            font-size:20px;
+            transform:translateY(-50%);
+            opacity: 0.8;
+            transition: transform $timing;
+        }
+    }
+
+    &__content {
+        border-bottom: 1px solid $color-grey;
+        overflow: hidden;
+        transition: height $timing;
+        color:$color-secondary;
+    }
+}

@@ -1,0 +1,86 @@
+.c-cont-image {
+    position: relative;
+    padding-bottom: 80px;
+    @include mq($until: desktop) {
+        padding-bottom:52px;
+    }
+    z-index:100;
+    $c: &;
+    &__wrapper {
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        @include mq($until: tablet) {
+            flex-wrap:wrap;
+        }
+    }   
+    &__image {
+        width:calc(50% - 36px);
+        flex-basis:calc(50% - 36px);
+        position: relative;
+        img {
+            width:100%;
+            position:absolute;
+            top:0;
+            left:0;
+            overflow:hidden;
+        }
+        @include mq($until: tablet) {
+            width:100%;
+            flex-basis:100%;
+            margin-bottom:30px;
+        }
+        .b-cont-image--right & {
+            order:2;
+            @include mq($until: tablet) {
+                order:-1;
+            }
+        }
+    }
+    &__content {
+        width:calc(50% - 36px);
+        flex-basis:calc(50% - 36px);
+        h2, h3 {
+            margin-bottom:32px;
+        }
+        strong {
+            font-weight:400;
+            color:$color-black;
+        }
+        ul, ol {
+            li {
+                margin-bottom:20px;
+            }
+        }
+        *:last-child {
+            margin-bottom:0;
+        }
+        @include mq($until: tablet) {
+            width:100%;
+            flex-basis:100%;
+            h2, h3 {
+                br {
+                    display:none;
+                }
+            }
+        }
+        .b-cont-image--right & {
+            padding-right:8.5%;
+            @include mq($until: wide) {
+                //padding-right:10%;
+            }
+            @include mq($until: tablet) {
+                padding-right:0;
+            }
+        }
+        .b-cont-image--left & {
+            padding-left:8.5%;
+            @include mq($until: wide) {
+                //padding-left:10%;
+            }
+            @include mq($until: tablet) {
+                padding-left:0;
+            }
+        }
+    }
+}

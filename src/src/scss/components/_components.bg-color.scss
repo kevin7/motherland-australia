@@ -1,0 +1,16 @@
+.c-bg-color {
+    &--red {
+        background-color: $color-primary;
+        color:$color-secondary;
+        a {
+            color:$color-secondary;
+        }
+    }
+    &--black {
+        background-color: $color-secondary;
+        color:$color-white;
+        a {
+            color:$color-white;
+        }
+    }
+}

@@ -1,0 +1,177 @@
+.c-footer {
+    background: rgb(255,255,255);
+    background: linear-gradient(360deg, rgba(255,255,255,1) 0%, rgba(255,249,244,1) 100%);
+    padding:80px 0 40px 0;
+    position: relative;
+    z-index:10;
+    font-size:15px;
+
+    a {
+        &:hover {
+            color:$color-primary;
+        }
+    }
+
+
+    @include mq($until: desktop) {
+        padding:80px 0;
+        font-size:14px;
+    }
+
+    @include mq($until: tablet) {
+        padding:40px 0;
+    }
+
+    .o-wrapper {
+        max-width:1300px;
+    }
+
+    &__wrapper {
+        @include inuit-clearfix();
+    }
+
+    &__content {
+        max-width:350px;
+        float:left;
+        position: relative;
+        h6 {
+            text-transform: uppercase;
+            font-weight:700;
+            color:$color-black;
+            margin-bottom:10px;
+        }
+        p {
+            font-size:15px;
+            @include mq($until: desktop) {
+                font-size:14px;
+            }
+        }
+        &-logo {
+            position: absolute;
+            top:40px;
+            right:-140px;
+            img {
+                max-width:100%;
+            }
+            @include mq($until: desktop) {
+                right:0;
+                top:35px;
+                width:80px;
+            }
+        }
+        @include mq($until: desktop) {
+            max-width:100%;
+            padding-right:120px;
+            p {
+                margin-bottom:15px;
+            }
+        }
+    }
+
+    &__nav {
+        float:right;
+        width:calc(80% - 350px);
+        @include mq($until: desktop) {
+            width:100%;
+            margin-top:30px;
+        }
+        @include mq($until: mobile) {
+            display:none;
+        }
+        > ul {
+            margin:0;
+            padding:0;
+            list-style:none;
+            display:flex;
+            justify-content: space-between;
+            @include mq($until: desktop) {
+                justify-content: flex-start;
+                > li {
+                    padding-right:30px;
+                }
+            }
+            > li {
+                > a {
+                    color:$color-black;
+                    text-decoration:none;
+                    font-size:15px;
+                    &:hover {
+                        color:$color-primary;
+                    }
+                }
+            }
+            ul {
+                margin:15px 0 0 0;
+                padding:0;
+                list-style:none;
+                > li {
+                    margin-bottom:15px;
+                    > a {
+                        color:$color-font;
+                        text-decoration:none;
+                        font-size:15px;
+                        &:hover {
+                            color:$color-primary;
+                        }
+                    }
+                    @include mq($until: desktop) {
+                        margin-bottom:10px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &__bottom {
+        @include inuit-clearfix();
+        padding-top:60px;
+        clear:left;
+        &-copy {
+            float:left;
+        }
+        &-links {
+            float:right;
+            ul {
+                margin:0;
+                padding:0;
+                list-style:none;
+                text-align:right;
+                li {
+                    display:inline-block;
+                    margin-left:20px;
+                    a {
+                        color:$color-font;
+                        font-size:15px;
+                        &:hover {
+                            color:$color-primary;
+                        }
+                    }
+                    @include mq($until: desktop) {
+                        margin-left:10px;
+                    }
+                }
+            }
+        }
+        @include mq($until: desktop) {
+            text-align:left;
+            padding-top:40px;
+            &-copy {
+                float:none;
+            }
+            &-links {
+                float:none;
+                margin-bottom:20px;
+                ul {
+                    text-align:left;
+                    li {
+                        margin-left:0;
+                        margin-right:10px;
+                    }
+                }
+            }
+
+        }
+    }
+
+}

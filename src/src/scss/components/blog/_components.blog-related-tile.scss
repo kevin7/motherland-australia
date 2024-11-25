@@ -1,0 +1,70 @@
+.c-blog-related-tile {
+    background-color: $color-white;
+    display: flex;
+    padding: 24px;
+    position: relative;
+    margin-bottom: 16px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover &-title {
+        text-decoration: underline;
+    }
+
+    &-thumb {
+        position: relative;
+        flex: 0 0 60px;
+        width: 60px;
+        height: 60px;
+        margin-right: 24px;
+
+        &__spacer {
+            padding-bottom: 100%;
+        }
+
+        &__image {
+            border-radius: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: $color-grey-light;
+        }
+    }
+
+    &-title {
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 4px;
+
+        &__link {
+            display: block;
+            color: $color-black;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+            }
+        }
+    }
+
+    &-meta {
+        color: $color-grey-very-dark;
+        font-size: 16px;
+    }
+}

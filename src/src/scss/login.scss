@@ -1,0 +1,142 @@
+// stylelint-disable
+$color-primary: #0F0F0F;
+$color-link: #FF759E;
+$color-secondary: #0F3E3A;
+$color-field-bg: #ffffff;
+$color-field-border: #6B8B89;
+$color-background: #FFF9F4;
+
+@font-face {
+    font-family: 'Lufga';
+    src: url('../fonts/Lufga-Regular.woff2') format('woff2'),
+        url('../fonts/Lufga-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+
+body.login {
+    font-family: 'Lufga', sans-serif;
+    background: $color-background;
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+}
+
+body.login #login form#loginform {
+    margin-top: 20px;
+    margin-left: 0;
+    padding: 26px 24px 46px;
+    font-weight: 400;
+    background: transparent;
+    display: table;
+    box-shadow: none;
+    width: 268px;
+    height: 50px;
+    border:1px solid $color-field-border;
+    border-radius:8px;
+}
+
+#login {
+    padding: 0;
+    padding-bottom: 3rem;
+}
+
+body.login #login h1 a {
+    background-image: url('../images/logo.svg');
+    background-size: 100%;
+    width: 160px;
+    height: 150px;
+    margin: 0 auto 25px;
+}
+
+.login form {
+    border-radius: 0;
+}
+
+.login #login_error {
+    border-left-color: transparent;
+    border-radius: 0;
+    color: #c00;
+    text-align: center;
+    box-shadow: none;
+    margin: 0 auto;
+    background-color: transparent;
+    padding:0;
+
+    br {
+        display: none;
+    }
+}
+
+.login .message {
+    border-left-color: transparent;
+    border-radius: 0;
+    color: $color-primary;
+    text-align: center;
+    box-shadow: none;
+    background-color: transparent !important;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.login label {
+    font-size: 14px;
+    color: $color-secondary;
+    margin-bottom:8px;
+}
+
+.login input[type=text],
+.login input[type=password] {
+    font-size: 14px;
+    height: 45px;
+    line-height: 45px;
+    padding: 5px 10px;
+    border-color: $color-field-border;
+    color: $color-primary;
+    background:#ffffff !important;
+    border-radius:8px;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+    border-color: $color-field-border;
+    box-shadow: none;
+}
+
+input[type='text']:focus,
+input[type='password']:focus {
+    box-shadow: none;
+    border: 1px solid $color-field-border;
+}
+
+.login .button-primary {
+    float: right;
+    background-color: $color-link !important;
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    border-radius: 40px !important;
+}
+
+.login .button-primary:hover {
+    background-color: $color-link !important;
+}
+
+.login .button-primary:active {
+    background-color: $color-link !important;
+}
+
+.login #backtoblog a,
+.login #nav a,
+.login a {
+    color: $color-link;
+}
+
+.login #backtoblog a:hover,
+.login #nav a:hover {
+    color:$color-link;
+    text-decoration: underline;
+}
+// stylelint-enable

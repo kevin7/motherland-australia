@@ -1,0 +1,83 @@
+.b-waitlist {
+    padding:40px 0 0 0;
+    $c: &;
+
+    &.b-group-listing {
+        #{$c}__header {
+            max-width:100%;
+        }
+    }
+
+    &__header {
+        display:flex;
+        justify-content: space-between;
+        max-width:1000px;
+        margin:0 auto 48px auto;
+
+        &-content {
+            padding-right:20px;
+            p {
+                &:last-of-type {
+                    margin-bottom:0;
+                }
+            }
+        }
+
+        @include mq($until: mobile) {
+            display:block;
+            margin-bottom:30px;
+            text-align:center;
+            &-content {
+                padding-right:0;
+                margin-bottom:30px;
+            }
+        }
+
+    }
+    &__price {
+        text-align:center;
+
+
+        &-value {
+            color:$color-primary;
+            display:flex;
+            align-items: flex-start;
+            justify-content: center;
+   
+            b {
+                font-weight:700;
+                font-size:76px;
+                line-height:1;
+            }
+            span {
+                font-size:36px;
+                line-height:1.4;
+                padding-right:5px;
+            }
+            @include mq($until: tablet) {
+                b {
+                    font-weight:700;
+                    font-size:60px;
+                    line-height:1;
+                }
+                span {
+                    font-size:30px;
+                    line-height:1.4;
+                    padding-right:5px;
+                }   
+            }
+        }   
+        &-caption {
+            font-size:14px;
+            @include mq($until: tablet) {
+                font-size:12px;
+            }
+        }    
+    }
+
+    &__groups {
+        position: relative;
+        overflow:hidden;
+    }
+
+}

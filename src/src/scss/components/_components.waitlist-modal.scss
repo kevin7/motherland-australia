@@ -1,0 +1,49 @@
+.c-waitlist {
+    display:flex;
+    flex-wrap: wrap;
+    max-width:1050px;
+    &__content {
+        width:50%;
+        padding:60px 80px;
+        background-color: $color-secondary;
+        h3 {
+            margin-bottom:30px;
+        }
+        @include mq($until: desktop) {
+            padding:60px 50px;
+        }
+        @include mq($until: tablet) {
+            width:100%;
+            padding:60px 30px 30px 30px;
+        }
+    }
+
+    &__forms {
+        width:50%;
+        padding:60px 50px;
+        @include mq($until: tablet) {
+            width:100%;
+            padding:30px;
+        }
+    }
+
+    &__form {
+        display:none;
+        &.active {
+            display:block;
+        }
+    }
+
+    .gform_footer {
+        text-align:left;
+    }
+
+    .gform_confirmation_message {
+        background-color: transparent;
+        color:$color-black;
+        h1, h2, h3, h4, h5, h6 {
+            color:$color-black;
+        }
+    }
+
+}

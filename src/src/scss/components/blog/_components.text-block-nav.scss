@@ -1,0 +1,109 @@
+.c-text-block-nav {
+    display: none;
+    list-style: none;
+    margin: 0;
+    width: 195px;
+    opacity: 1;
+    transition: opacity $timing;
+
+    @include mq(desktop) {
+        display: block;
+    }
+
+    &:before {
+        content: 'In this article';
+        display: block;
+        margin-bottom: 32px;
+        font-size: 18px;
+        color: $color-black;
+    }
+
+    > div {
+        position: relative;
+    }
+
+    &-wrapper {
+        display: none;
+
+        @include mq(desktop) {
+            display: block;
+        }
+
+        .o-wrapper {
+            position: relative;
+        }
+    }
+
+    &__item {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+
+        &:last-child {
+            .c-text-block-nav__link {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        color: #767676;
+        font-size: 16px;
+        margin-left: 24px;
+        margin-bottom: 16px;
+        line-height: 1.4;
+        transition: color $timing;
+
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 100%;
+            background-color: #f4f4f4;
+        }
+
+        &.is-active {
+            color: $color-black;
+            opacity: 1;
+
+            span {
+                opacity: 1;
+
+                &:before {
+                    opacity: 1;
+                    position: absolute;
+                    left: -24px;
+                    content: '';
+                    display: inline-block;
+                    width: 6px;
+                    height: 100%;
+                    background-color: $color-black;
+                }
+            }
+        }
+
+        &:hover {
+            color: $color-black;
+        }
+
+        span {
+            position: relative;
+            display: block;
+        }
+    }
+}
+
+[data-sticky-sidebar] {
+    opacity: 1;
+    transition: opacity $timing;
+
+    @at-root.sidebar-hidden & {
+        opacity: 0;
+    }
+}

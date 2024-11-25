@@ -1,0 +1,15 @@
+.c-blog-related__carousel {
+    margin-bottom: 24px;
+    overflow: visible;
+
+    .c-carousel__slide {
+        width: 70%;
+        margin-right: 16px;
+        min-height: 100%;
+        display: flex;
+
+        @include mq(tablet) {
+            width: 40%;
+        }
+    }
+}

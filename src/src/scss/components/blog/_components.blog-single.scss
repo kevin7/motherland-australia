@@ -1,0 +1,18 @@
+.c-blog-single {
+    padding-top: 32px;
+    
+    @include mq(desktop) {
+        padding-top: 80px;
+    }
+
+    &__social {
+        &-wrapper {
+            border-top:1px solid #eee;
+            border-bottom:1px solid #eee;
+            padding:64px 0;
+            @include mq($until: desktop) {
+                padding:40px 0;
+            }
+        }
+    }
+}

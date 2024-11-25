@@ -1,0 +1,24 @@
+// --------------------------------------------------
+// Spacing
+// --------------------------------------------------
+$inuit-global-spacing-unit: 25px;
+$spacing-unit: $inuit-global-spacing-unit;
+$spacing-unit-small: $spacing-unit / 2;
+$spacing-unit-large: $spacing-unit * 2;
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+$inuit-wrapper-width: 1200px !default;
+$min_width: 320px !default;
+$max_width: $inuit-wrapper-width;
+$mq-breakpoints: (
+    mobile:  575px,
+    tablet:  767px,
+    desktop: 991px, 
+    wide:    1200px,
+    // Tweakpoints
+    mobileSmall: 370px,
+    mobileLandscape: 480px,
+    wideUltra: 1600px
+) !default;

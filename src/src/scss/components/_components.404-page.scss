@@ -1,0 +1,9 @@
+.c-page-404 {
+    background-color: $color-secondary;
+    color:$color-white;
+    text-align:center;
+    padding:240px 0 120px 0;
+    @include mq($until: tablet) {
+        padding:180px 0 40px 0;
+    }
+}

@@ -1,0 +1,31 @@
+.b-instagram {
+    
+    &__content {
+        padding:30px 0 70px 0;
+        text-align:center;
+        @include mq($until: tablet) {
+            padding: 0 0 70px 0            
+        }
+    }
+    &__feed {
+        position: relative;
+        max-height:400px;
+        padding-top:22%;
+        transform:scale(1.1);
+        
+        @media (max-width: 800px) {
+            padding-top:36%;
+        }
+        @include mq($until: mobile) {
+            padding-top:70%;
+        }
+        #sb_instagram {
+            position: absolute;
+            top:0;
+            left:50%;
+            width: 105%;
+            transform:translateX(-50%);
+        }
+
+    }
+}

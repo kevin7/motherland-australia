@@ -1,0 +1,21 @@
+.b-faqs {
+    padding:80px 0;
+    @include mq($until: tablet) {
+        padding:40px 0;
+    }
+
+    .o-wrapper {
+        max-width:1000px;
+    }
+
+    &__block {
+        margin-bottom:80px;
+        &:last-child {
+            margin-bottom:0;
+        }
+        @include mq($until: tablet) {
+            margin-bottom:40px;
+        }
+    }
+
+}

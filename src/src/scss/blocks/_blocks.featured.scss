@@ -1,0 +1,30 @@
+.b-featured {
+    text-align:center;
+    padding-bottom:100px;
+    
+    &__content {
+        max-width:1100px;
+        width:100%;
+        margin:0 auto;
+    }
+
+    &__gallery {
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        &-item {
+            text-align:center;
+            img {
+                max-width:70%;
+            }
+            @include mq($until: tablet) {
+                width:50%;
+                img {
+                    max-width:80%;
+                }
+            }
+        }
+        
+    }
+
+}

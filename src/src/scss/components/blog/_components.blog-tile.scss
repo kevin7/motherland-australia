@@ -1,0 +1,35 @@
+.c-blog-tile {
+    position: relative;
+    margin-bottom: 24px;
+
+    @include mq(desktop) {
+        margin-bottom: 40px;
+    }
+
+    &-thumbnail {
+        margin-bottom: 24px;
+        overflow: hidden;
+
+        .c-lazy-wrapper {
+            padding-bottom: 63% !important;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 16px;
+
+        a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}

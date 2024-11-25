@@ -1,0 +1,30 @@
+.c-subscribe {
+    position: relative;
+    h4 {
+        @include mq($until: tablet) {
+            font-size:30px;
+        }
+    }
+    .gfield_html {
+        text-align:center !important;
+        h4 {
+            margin-bottom:24px;
+        }
+        p {
+            margin-bottom:24px;
+        }
+    }
+    form {
+        text-align:left;
+    }
+    .c-button--outline-black {
+        position: absolute;
+        bottom:0;
+        left:165px;
+        @include mq($until: tablet) {
+            position:static;
+            margin-top:8px;
+            width:100%;
+        }
+    }
+}

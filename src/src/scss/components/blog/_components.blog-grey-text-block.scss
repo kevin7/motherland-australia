@@ -1,0 +1,35 @@
+.c-blog-grey-text-block {
+    background-color: $color-grey-lighter;
+    padding: 24px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family:$font-family-secondary;
+            text-transform:none;
+            color:$color-secondary;
+
+    @include mq($until: tablet) {
+        border-radius:12px;
+    }
+
+    &__wrapper {
+        padding-top: 40px;
+
+        @include mq(desktop) {
+            padding-top: 64px;
+        }
+    }
+
+    &__description {
+        p,
+        ul,
+        li {
+            font-size: 18px !important;
+            font-weight: 400 !important;
+        }
+    }
+
+    .c-link {
+        font-size: 16px;
+    }
+}

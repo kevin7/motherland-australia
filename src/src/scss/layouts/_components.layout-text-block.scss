@@ -1,0 +1,78 @@
+.c-layout-text-block {
+    $c: &;
+    padding-bottom: 80px;
+    @include mq($until: desktop) {
+        padding-bottom:52px;
+    }
+    &__wrapper {
+        max-width:700px;
+        margin:0 auto;
+    }
+
+    &__title {
+        font-size:60px;
+        margin-bottom:64px;
+        @include mq($until: desktop) {
+            font-size:30px;
+            margin-bottom:32px;
+        }
+    }
+
+
+    figcaption {
+        display: block;
+        padding-top: 16px;
+        text-align: center;
+        font-size: 14px;
+        opacity: 0.6;
+    }
+
+    figure {
+        padding-top: 40px;
+        width: 100% !important;
+    }
+
+    *:last-child {
+        padding-bottom: 0;
+        margin-bottom:0;
+    }
+    p {
+        + h3,
+        + h4 {
+            margin-top:40px;
+        }
+        @include mq($until: desktop) {
+            margin-bottom:16px;
+        }
+    }
+
+    h3,
+    h4 {
+        font-size:25px;
+        margin-bottom:24px;
+        @include mq($until: desktop) {
+            font-size:20px;
+            margin-bottom:16px;
+        }
+    }
+
+    ul {
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        li {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin-top: 8px;
+        }
+    }
+
+    a {
+
+    }
+}

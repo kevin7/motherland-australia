@@ -1,0 +1,76 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+    font-family: $font-family-secondary;
+    font-size:18px;
+    background-color: $color-white;
+    line-height:1.4;
+    color:$color-font;
+    font-weight:400;
+    &.no-scroll {
+        overflow:hidden; 
+    }
+    &.has-promobar {
+        padding-top:60px;
+    }
+}
+
+a {
+  transition:all .5s ease;
+  color:$color-black;
+  &:hover {
+    text-decoration:none;
+  }
+}
+
+ul, ol {
+  margin:0 0 30px 0;
+  padding:0 0 0 20px;
+  li {
+    @include fluid-type($min_width, $max_width, 16px, 18px);  
+    margin-bottom:15px;
+  }
+}
+
+p {
+  margin-bottom:32px;
+  line-height:1.6;
+  @include fluid-type($min_width, $max_width, 16px, 18px);
+  &.lead {
+    @include fluid-type($min_width, $max_width, 20px, 24px);
+    font-weight:400;
+    line-height:1.5;
+    color:$color-black;
+  }
+  &.highlight {
+    @include fluid-type($min_width, $max_width, 18px, 22px);
+    color:$color-primary;
+    line-height:1.4;
+  }
+  &.cursive {
+    @include fluid-type($min_width, $max_width, 20px, 28px);
+    font-family:$font-family-cursive;
+  }
+}
+
+blockquote {
+  text-align:center;
+  margin:70px 0;
+  color:$color-primary;
+  p {
+    line-height:1.2;
+    font-family:$font-family-primary;
+    font-weight:400;
+    color:$color-black;
+    @include fluid-type($min-width, $max-width, 26px, $inuit-font-size-h3);
+  }
+}
+
+#main {
+  overflow:hidden;
+}
+
+.wp-block-separator {
+  margin-bottom:0;
+  border-top:1px solid rgba($color-primary, 0.1);
+}

@@ -1,0 +1,42 @@
+.c-blog-carousel-block {
+    &-carousel {
+        padding-bottom: 0;
+        padding-top: 40px;
+        border-radius: 12px;
+        position: relative;
+
+        @include mq(desktop) {
+            padding-top: 64px;
+        }
+
+        &__item {
+            width: 100%;
+        }
+
+        &__count {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 14px;
+        }
+    }
+
+    &__image {
+        border-radius: 24px;
+        @include mq($until: tablet) {
+            border-radius:12px;
+        }
+    }
+
+    &__caption {
+        display: block;
+        padding-top: 16px;
+        text-align: left;
+        color: $color-grey-dark;
+        font-size: 14px;
+
+        span {
+            color: $color-black;
+        }
+    }
+}

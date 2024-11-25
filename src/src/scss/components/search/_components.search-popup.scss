@@ -1,0 +1,58 @@
+body {
+    &.c-search--opened {
+      .c-search {
+        opacity:1;
+        visibility: visible;
+      }
+    }
+  }
+  
+  .c-search {
+  
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background-color: $color-primary;
+    z-index:5000;
+    padding:80px 0;
+    opacity:0;
+    visibility: hidden;
+    transition:all .3s ease;
+    box-shadow:0 0 10px 0 rgba(0,0,0,0.2);
+  
+  
+    @include mq($until: tablet) {
+      padding-bottom:40px;
+      padding-top:72px;
+    }
+  
+    &__close {
+      position: absolute;
+      top:24px;
+      right:24px;
+      color:$color-secondary;
+      cursor:pointer;
+      transition:all .3s ease;
+      display:flex;
+      align-items: center;
+      svg {
+        position: relative;
+        margin-left:5px;
+        path {
+          transition:all .3s ease;
+        }
+      }
+      &:hover {
+        color:$color-secondary;
+        svg {
+          path {
+            stroke:lighten($color-primary, 15%);
+          }
+        }
+      }
+    }
+  
+  
+  }
+  

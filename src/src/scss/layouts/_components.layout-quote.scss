@@ -1,0 +1,24 @@
+.b-quote {
+    padding-bottom: 80px;
+    @include mq($until: desktop) {
+        padding-bottom:52px;
+    }
+    &__wrapper {
+        padding:40px 0;
+        max-width:880px;
+        margin:0 auto;
+        text-align:center;
+        @include mq($until: desktop) {
+            padding:8px 0;
+        }
+    }
+    p {
+        @include fluid-type($min_width, $max_width, 26px, 28px);
+        color:#0F3E3A;
+        line-height:1.5;
+        margin:0;
+    }
+    &__name {
+        margin-top:24px;
+    }
+}

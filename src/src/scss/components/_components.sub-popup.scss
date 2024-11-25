@@ -1,0 +1,96 @@
+.sub-popup {
+    position: fixed;
+    bottom:0;
+    right:0;
+    max-width:480px;
+    width:100%;
+    padding:20px;
+    z-index:2000;
+    overflow:hidden;
+    pointer-events: none;
+    &.done {
+        .sub-popup__close {
+            display:none;
+        }
+    }
+    &.active {
+        pointer-events: auto;
+        .sub-popup__wrapper {
+            transform:translateY(0);
+        }
+    }
+    &__wrapper {
+        background-color: rgba(#fff, 1);
+        width:100%;
+        padding:30px;
+        border-radius:10px;
+        position: relative;
+        transform:translateY(110%);
+        transition:all .3s ease;
+        box-shadow:0 0 20px 0 rgba(0,0,0,0.05);
+        @include mq($until: desktop) {
+            box-shadow:0 0 15px 5px rgba(0,0,0,0.3);
+            background-color: rgba(#fff, 1);
+        }
+    }
+    &__close {
+        position: absolute;
+        top:15px;
+        right:20px;
+        cursor:pointer;
+        opacity:1;
+        transition:all .4s ease;
+        font-size:18px;
+        &:hover {
+            color:$color-primary;
+        }
+    }
+    h6 {
+        font-family:$font-family-primary;
+        font-weight:500;
+        font-size:18px;
+        margin-bottom:24px;
+        line-height:1.5;
+        color:#0F3E3A;
+        padding-right:48px;
+
+    }
+    .gform_fields {
+        display:block !important;
+        .gfield {
+            margin-bottom:8px !important;
+            input {
+                height:50px !important;
+            }
+        }
+    }
+    .gform_footer {
+        text-align:right !important;
+        display:block !important;
+        position: relative;
+        padding-top:0 !important;
+        img {
+            position: absolute;
+            left:0;
+            top:50%;
+            transform:translateY(-50%);
+        }
+        .c-button {
+            order:2;
+            padding:12px 14px !important;
+            margin-bottom:0 !important;
+            &:after {
+                display:none !important;
+            }
+        }
+    }
+    .gform_confirmation_message {
+        font-family:$font-family-primary;
+        font-weight:500;
+        font-size:16px;
+        margin-bottom:8px;
+        line-height:1.3;
+        color:#0F3E3A !important;
+        background-color: transparent !important;
+    }
+}

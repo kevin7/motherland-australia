@@ -1,0 +1,59 @@
+// --------------------------------------------------
+// Fonts
+// --------------------------------------------------
+$font-family-primary:  'Lufga', sans-serif;
+$font-family-secondary: 'Lufga', sans-serif;
+$font-family-cursive: 'Handlee', cursive;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$inuit-font-size-h1:  60px !default;
+$inuit-font-size-h2:  36px !default;
+$inuit-font-size-h3:  32px !default;
+$inuit-font-size-h4:  26px !default;
+$inuit-font-size-h5:  22px !default;
+$inuit-font-size-h6:  20px !default;
+
+// --------------------------------------------------
+// Color
+// --------------------------------------------------
+$color-bg: #FFFFFF;
+$color-font: #5D7472;
+
+$color-black: #235E59;
+$color-white: #ffffff;
+
+$color-grey-very-dark: #111111;
+$color-grey-darker: #1E5954;
+$color-grey-dark: #898989;
+$color-grey: #BDBDBD;
+$color-grey-light: #D1D1D1;
+$color-grey-lighter: #E3EAE9;
+
+$color-brown:#795826;
+$color-blue:#B5D3E4;
+$color-green:#B6D79F;
+$color-green-100:#5E706E;
+$color-green-200:#0F3E3A;
+$color-white: #fff;
+$color-red:#a93e3e;
+
+$color-primary: #FF759E;
+$color-secondary: #FFF9F4;
+$color-beige: #F6F0EB;
+
+$color-line: rgba(#65696B, 0.3);
+
+
+
+// --------------------------------------------------
+// Timings
+// --------------------------------------------------
+
+$timing: 300ms;
+$timing-fast: $timing / 2;
+$timing-slow: $timing * 2;

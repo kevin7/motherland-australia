@@ -1,0 +1,103 @@
+.c-filter {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:48px;
+    flex-wrap:wrap;
+    position: relative;
+
+    $c: &;
+    &__hidden {
+        display:none;
+    }
+
+    &__left {
+        @include mq($until: tablet) {
+            width:100%;
+            order:2;
+            margin-top:16px;
+            .c-button {
+                width:100%;
+            }
+            &.active {
+                #{$c}__cats {
+                    display:block;
+                }
+            }
+        }
+    }
+
+
+    &__right {
+        width:30%;
+        @include mq($until: tablet) {
+            width:100%;
+        }
+    }
+
+    &__mobile-toggle {
+        display:none;
+        @include mq($until: tablet) {
+            display:block;
+        }
+    }
+
+    &__cats {
+        &.active {
+          #{$c}__cat {
+            display:inline-block;
+          }
+        }
+        @include mq($until: tablet) {
+            display:none;
+            margin-top:16px;
+        }
+      }
+
+    &__cat {
+        display:none;
+        cursor:pointer;
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5) {
+          display:inline-block;
+        }
+    }
+
+    .c-badge {
+        cursor:pointer;
+    }
+
+    &__search {
+        position: relative;
+        input {
+            border:0;
+            padding:0 20px;
+            height:50px;
+            background: #FFFFFF;
+            border-radius: 5px;
+            font-family:$font-family-secondary;
+            font-size:16px;
+            color:$color-secondary;
+            outline:none;
+            width:100%;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            top:50%;
+            right:15px;
+            transform:translateY(-50%);
+            z-index: 100;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-image: url("data:image/svg+xml,%3Csvg width='19' height='16' viewBox='0 0 19 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.38809 0.728555C3.24795 1.09077 0.211418 4.75163 0.570301 8.85368C0.932239 12.9907 4.55846 16.0334 8.69543 15.6715C10.9073 15.478 12.8064 14.3513 14.0395 12.7124L17.4438 14.9894C17.9029 15.2965 18.5239 15.1732 18.831 14.7142C19.138 14.2551 19.0148 13.6341 18.5557 13.327L15.0204 10.9623C15.4353 9.91227 15.6186 8.75096 15.5132 7.54635C15.1513 3.40937 11.5251 0.366616 7.38809 0.728555ZM2.56269 8.67937C2.29952 5.67133 4.52897 2.98633 7.5624 2.72094C10.599 2.45528 13.2552 4.68405 13.5208 7.72066C13.7865 10.7573 11.5577 13.4134 8.52112 13.6791C5.48451 13.9448 2.82836 11.716 2.56269 8.67937Z' fill='%230f0f0f'/%3E%3C/svg%3E%0A");
+        }
+    }
+
+}

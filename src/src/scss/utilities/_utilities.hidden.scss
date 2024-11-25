@@ -1,0 +1,39 @@
+.u-hidden\@mobile {
+    @include mq($until: tablet) {
+        display: none !important;
+    }
+}
+
+.u-hidden\@tablet {
+    @include mq($from: tablet, $until: desktop) {
+        display: none !important;
+    }
+}
+
+.u-hidden\@desktop {
+    @include mq($from: desktop, $until: wide) {
+        display: none !important;
+    }
+}
+
+.u-hidden\@wide {
+    @include mq($from: wide) {
+        display: none !important;
+    }
+}
+
+.u-visible-mobile {
+    @include mq(mobile) {
+        display:none !important;
+    }
+}
+
+.u-visible-desktop {
+    @include mq($until: desktop) {
+        display:none !important;
+    }
+}
+
+.u-hidden {
+    display:none !important;
+}

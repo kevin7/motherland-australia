@@ -1,0 +1,67 @@
+.b-stickypost {
+    margin-top:-360px;
+    margin-bottom:72px;
+    @include mq($until: desktop) {
+        margin-top:-360px;
+        margin-bottom:48px;
+    }
+    @include mq($until: tablet) {
+        margin-top:-180px;
+    }
+    &__wrapper {
+        display:flex;
+        justify-content: space-between;
+        flex-wrap:wrap;
+    }
+    &__left {
+        width:calc(54% - 8px);
+        flex-basis:calc(54% - 8px);
+        @include mq($until: wide) {
+            width:calc(50% - 8px);
+            flex-basis:calc(50% - 8px);
+        }
+        @include mq($until: desktop) {
+            width:100%;
+            flex-basis:100%;
+            margin-bottom:18px;
+        }
+    }
+    &__right {
+        width:calc(46% - 8px);
+        flex-basis:calc(46% - 8px);
+        position: relative;
+        @include mq($until: wide) {
+            width:calc(50% - 8px);
+            flex-basis:calc(50% - 8px);
+        }
+        @include mq($until: desktop) {
+            width:100%;
+            flex-basis:100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .c-post {
+            &:first-child {
+                position: absolute;
+                top:0;
+                left:0;
+                height:calc(50% - 8px);
+            }
+            &:last-child {
+                position: absolute;
+                bottom:0;
+                left:0;
+                height:calc(50% - 8px);
+            }
+            @include mq($until: desktop) {
+                &:first-child,
+                &:last-child {
+                    height:auto;
+                    position: relative;
+                    width:calc(50% - 4px);
+                }
+            }
+        }
+    }
+}

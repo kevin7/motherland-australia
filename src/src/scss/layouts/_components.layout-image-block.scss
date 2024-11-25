@@ -1,0 +1,29 @@
+.c-layout-image-block {
+    padding-bottom: 80px;
+    @include mq($until: desktop) {
+        padding-bottom:52px;
+    }
+    position: relative;
+
+    &__wrapper {
+        max-width:880px;
+        margin:0 auto;
+    }
+
+    .c-lazy-wrapper {
+    }
+
+    &__image {
+        border-radius: 10px;
+        img {
+            position:absolute;
+            top:0;
+            left:0;
+            overflow:hidden;
+        }
+    }
+    .c-caption {
+        font-size:14px;
+        padding-top:8px;
+    }
+}

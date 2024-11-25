@@ -1,0 +1,8 @@
+.b-text-header {
+    text-align:center;
+    background-color: $color-secondary;
+    padding:15% 0 40px 0;
+    @include mq($until: tablet) {
+        padding-top:120px;
+    }
+}

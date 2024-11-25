@@ -1,0 +1,187 @@
+.c-blog-single-intro {
+    padding-top: 120px;
+    overflow: hidden;
+    padding-bottom: 0;
+    background-color: $color-secondary;
+
+    @include mq(tablet) {
+        padding-top: 120px;
+    }
+
+    @include mq(desktop) {
+        padding-top: 220px;
+        padding-bottom: 80px;
+        max-width: none;
+    }
+
+
+    .o-layout__item {
+        &:first-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @include mq($until: desktop) {
+                max-width: 650px;
+                margin: 40px auto 0;
+            }
+
+            @include mq(desktop) {
+                margin-top: 0;
+            }
+        }
+
+    }
+    
+    &__breadcrumb {
+        padding: 0 $spacing-unit;
+        margin-top: 40px;
+
+        @include mq(tablet) {
+            padding: 0 24px 0 0;
+        }
+
+        @include mq(desktop) {
+            margin-top:0;
+        }
+    }
+
+    &__title {
+        @include fluid-type($min_width, $max_width, 40px, 60px);
+        margin-top: 24px;
+        margin-bottom: 24px;
+        padding: 0 $spacing-unit;
+        color: $color-primary !important;
+        font-weight: 900;
+
+        @include mq(tablet) {
+            padding: 0 24px 0 0;
+        }
+
+        @include mq(desktop) {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            max-width: 520px;
+        }
+    }
+
+    &__category {
+        background-color: $color-white;
+        color: $color-black;
+        font-size: 14px;
+        line-height: 1.2;
+        display: inline-block;
+        padding: 4px 8px;
+        margin-right: 8px;
+
+        &-wrapper {
+            padding: 0 $spacing-unit;
+
+            @include mq(tablet) {
+                padding: 0;
+            }
+        }
+    }
+
+    &-author {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        order: 1;
+        padding: 0 $spacing-unit;
+        font-size: 15px;
+        padding: 0 25px 40px;
+
+        @include mq(tablet) {
+            padding:0 0 40px 0;
+        }
+
+        @include mq(desktop) {
+            padding: 0;
+        }
+
+        &__image {
+            flex: 0 0 70px;
+            width: 70px;
+            height: 70px;
+            margin-right: 24px;
+            margin-bottom: 0;
+
+            @include mq(desktop) {
+                flex: 0 0 80px;
+                width: 80px;
+                height: 80px;
+            }
+
+            img {
+                width: 70px;
+                height: 70px;
+                border-radius:100px;
+
+                @include mq(desktop) {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+
+        &__label {
+            font-size: 16px;
+            color: $color-primary;
+            margin-bottom: 4px;
+            font-weight:500;
+
+            @include mq(desktop) {
+                font-size: 18px;
+            }
+        }
+
+        &__read {
+            color: $color-grey-dark;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        &__meta {
+            color: $color-grey-dark;
+            font-size: 16px;
+
+            a {
+                color: $color-grey-dark;
+                text-decoration:none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__image {
+        display: block;
+        height: auto;
+        width: 100%;
+        border-radius:0 !important;
+        @include mq(desktop) {
+            margin-top: 0;
+            border-radius:0 !important;
+        }
+    }
+
+    .o-wrapper {
+        @include mq($until: desktop) {
+            max-width: 650px;
+            padding: 0;
+            max-width: 100%;
+        }
+    }
+
+    .c-lazy-wrapper {
+        padding-bottom: 66.66%;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+[class^="svg-"]:before, [class*=" svg-"]:before {
+    content:'';
+    display: inline-block;
+    text-decoration: inherit;
+    width: 20px;
+    flex-basis:20px;
+    height: 20px;
+    background-position: center center;
+}
+
+.svg-globe:before { background-image: url(../images/icon-globe.svg); }
+.svg-exit:before { background-image: url(../images/icon-exit.svg); }
+.svg-book:before { background-image: url(../images/icon-book.svg); }
+.svg-external:before { background-image: url(../images/icon-external.svg); }
+.svg-external-pink:before { background-image: url(../images/icon-external-pink.svg); }
+.svg-headphone:before { background-image: url(../images/icon-headphone.svg); }
+.svg-list:before { background-image: url(../images/icon-list.svg); }

@@ -1,0 +1,35 @@
+.c-tests {
+    @include inuit-clearfix();
+    &__item {
+        width:33.33%;
+        padding:0 3%;
+        float:left;
+        img {
+            border-radius:10px;
+        }
+        &:nth-child(2) {
+            padding-top:9%;
+        }
+        @include mq($until: tablet) {
+            width:280px;
+            &:nth-child(2) {
+                padding-top:0;
+            }
+        }
+    }
+
+    &__text {
+        color:#fff;
+        line-height:1.2;
+        @include fluid-type($min_width, $max_width, 20px, 30px);
+        margin-bottom:24px;
+        @include mq($until: tablet) {
+            line-height:1.4;
+        }
+    }
+
+    &__name {
+        color:$color-secondary;
+    }
+
+}

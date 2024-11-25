@@ -1,0 +1,34 @@
+
+  
+  .c-topics {
+    display:flex;
+    justify-content: space-between;
+    @include mq($until: tablet) {
+      display:block;
+    }
+    &__title {
+      width:25%;
+      color:$color-secondary;
+      @include mq($until: tablet) {
+        width:100%;
+        margin-bottom:20px;
+      }
+    }
+    &__list {
+      width:50%;
+      text-align:right;
+      @include mq($until: tablet) {
+        text-align:left;
+        width:100%;
+      }
+    }
+    a.c-badge {
+      margin-left:5px;
+      margin-bottom:8px;
+      @include mq($until: tablet) {
+        margin-left:0;
+        margin-right:10px;
+        margin-bottom:10px;
+      }
+    }
+  }

@@ -1,0 +1,15 @@
+.c-blog-list {
+    padding-bottom:80px;
+    @include mq($until: desktop) {
+        padding-bottom:40px;
+    }
+    &--nos {
+        margin-top:-360px;
+        @include mq($until: desktop) {
+            margin-top:-360px;
+        }
+        @include mq($until: tablet) {
+            margin-top:-180px;
+        }
+    }
+}

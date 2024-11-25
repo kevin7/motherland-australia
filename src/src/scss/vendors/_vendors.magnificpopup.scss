@@ -1,0 +1,51 @@
+body.program  {
+    .mfp-bg {
+        background-color:rgba(0,0,0,0.7);
+    }
+    .mfp-container {
+        padding:16px;
+    }
+    .mfp-iframe-holder .mfp-content iframe {
+        border-radius:12px;
+        @include mq($until: desktop) {
+            border-radius:8px;
+        }
+    }
+    .mfp-close {
+        display:none;
+    }
+}
+
+.mfp-bg {
+    background-color: #FFF9F4;
+    opacity:1;
+}
+
+.mfp-container {
+    padding:25px;
+}
+
+.mfp-iframe-scaler iframe {
+    box-shadow:none;
+}
+
+.mfp-iframe-scaler {
+    padding-top:56.20%;
+}
+
+.mfp-iframe-holder .mfp-close {
+    color:#fff;
+    opacity:1;
+    background-color: $color-primary;
+    width:36px;
+    height:36px;
+    border-radius:100px;
+    line-height:36px;
+    padding:0;
+    text-align:center;
+    top:-16px;
+    right:-16px;
+    &:hover {
+        background-color: $color-grey-darker;
+    }
+}

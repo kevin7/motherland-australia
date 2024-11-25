@@ -1,0 +1,38 @@
+.c-blog-image-block {
+    &__wrapper {
+        padding-bottom: 0;
+        padding-top: 40px;
+        border-radius: 24px;
+        position: relative;
+
+        @include mq(desktop) {
+            padding-top: 64px;
+        }
+
+        @include mq($until: tablet) {
+            border-radius:12px;
+        }
+    }
+
+    &__image {
+        border-radius: 12px;
+        img {
+            position:absolute;
+            top:0;
+            left:0;
+            overflow:hidden;
+        }
+    }
+
+    &__caption {
+        display: block;
+        padding-top: 16px;
+        text-align: left;
+        color: $color-grey-dark;
+        font-size: 14px;
+
+        span {
+            color: $color-black;
+        }
+    }
+}

@@ -1,0 +1,197 @@
+.c-blog-single-intro {
+    padding-top: 0;
+    overflow: hidden;
+    padding-bottom: 40px;
+
+    @include mq(tablet) {
+        padding-top: 40px;
+    }
+
+    @include mq(desktop) {
+        padding-top: 154px;
+        padding-bottom: 80px;
+        max-width: none;
+    }
+
+    .o-wrapper {
+        max-width: 1325px;
+    }
+
+    .o-layout__item {
+        &:first-child {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            order: 2;
+
+            @include mq($until: tablet) {
+                max-width: 650px;
+                margin: 40px auto 0;
+            }
+
+            @include mq(desktop) {
+                margin-top: 0;
+                order: 1;
+            }
+        }
+
+        &:last-child {
+            order: 1;
+
+            @include mq(desktop) {
+                order: 2;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 35px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        padding: 0 $spacing-unit;
+        color: $color-black !important;
+        font-weight: 900;
+
+        @include mq(tablet) {
+            padding: 0 24px 0 0;
+        }
+
+        @include mq(desktop) {
+            margin-top: 40px;
+            font-size: 50px;
+            line-height: 60px;
+            margin-bottom: 40px;
+            max-width: 520px;
+        }
+    }
+
+    &__category {
+        background-color: $color-white;
+        color: $color-black;
+        font-size: 14px;
+        line-height: 1.2;
+        display: inline-block;
+        padding: 4px 8px;
+        margin-right: 8px;
+
+        &-wrapper {
+            padding: 0 $spacing-unit;
+
+            @include mq(tablet) {
+                padding: 0;
+            }
+        }
+    }
+
+    &-author {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        order: 1;
+        padding: 0 $spacing-unit;
+        font-size: 15px;
+
+        @include mq(tablet) {
+            padding: 0 0 24px;
+        }
+
+        @include mq(desktop) {
+            padding: 0;
+        }
+
+        &__image {
+            flex: 0 0 70px;
+            width: 70px;
+            height: 70px;
+            margin-right: 24px;
+            margin-bottom: 0;
+
+            @include mq(desktop) {
+                flex: 0 0 80px;
+                width: 80px;
+                height: 80px;
+            }
+
+            img {
+                width: 70px;
+                height: 70px;
+                border-radius: 70px;
+
+                @include mq(desktop) {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 80px;
+                }
+            }
+        }
+
+        &__label {
+            font-size: 16px;
+            color: $color-black;
+            margin-bottom: 4px;
+
+            @include mq(desktop) {
+                font-size: 18px;
+            }
+        }
+
+        &__read {
+            color: #767676;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        &__meta {
+            color: #767676;
+            font-size: 16px;
+
+            a {
+                color: #767676;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__image {
+        display: block;
+        height: auto;
+        width: 100%;
+
+        @include mq(tablet) {
+            border-radius: 5px;
+        }
+
+        @include mq(desktop) {
+            margin-top: 0;
+        }
+    }
+
+    .o-wrapper {
+        @include mq($until: desktop) {
+            max-width: 650px;
+        }
+
+        @include mq($until: tablet) {
+            padding: 0;
+            max-width: 100%;
+        }
+    }
+
+    .c-lazy-wrapper {
+        padding-bottom: 66.66%;
+        overflow: hidden;
+
+        @include mq(tablet) {
+            border-radius: 12px;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

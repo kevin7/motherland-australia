@@ -1,0 +1,78 @@
+.c-search-item {
+  &:last-child {
+    .c-search-item {
+      border-bottom:0;
+    }
+  }
+  &__item {
+    display:flex;
+    background-color: $color-grey-lighter;
+    padding:30px 140px 30px 30px;
+    border-radius:8px;
+    margin-bottom:15px;
+    position: relative;
+    color:$color-secondary;
+    @include mq($until: tablet) {
+      padding:20px 90px 20px 20px;       
+      display:block;
+    }
+  }
+
+  &__image {
+    min-width:60px;
+    height:60px;
+    margin-right:20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: $color-grey;
+    border-radius:80px;
+    @include mq($until: tablet) {
+      position:absolute;
+      top:20px;
+      right:20px;
+      min-width:60px;
+      width:60px;
+      height:60px;
+      margin-right:0;
+    }
+  }
+  &__title {
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:8px;
+    display:block;
+    text-decoration:none;
+    &:hover {
+    }
+    @include mq($until: tablet) {
+      font-size:18px;
+    }
+  }
+  &__desc {
+    p {
+      margin:0;
+      font-size:14px;
+    }
+    @include mq($until: tablet) {
+      p {
+        margin-bottom:8px;
+      }
+    }
+  }
+  .c-link {
+    position: absolute;
+    top:50%;
+    right:25px;
+    transform:translateY(-50%);
+    @include mq($until: tablet) {
+      position: relative;
+      top:0;
+      right:0;
+      transform: none;
+      margin-top:15px;
+    }
+  }
+}
+
+  

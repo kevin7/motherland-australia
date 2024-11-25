@@ -1,0 +1,14 @@
+.c-menu-links {
+    margin-bottom:24px;
+    a {
+        margin-right:10px;
+    }
+}
+
+.c-menu-link {
+    font-size:18px;
+    font-weight:600;
+    &:hover {
+        text-decoration:none;
+    }
+}

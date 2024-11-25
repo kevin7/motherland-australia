@@ -1,0 +1,57 @@
+// 8pt Grid
+
+$prefix: 'u'; //Point grid
+$size: 8;
+$multiplier: 15;
+
+// Margin
+@for $i from 0 through $multiplier {
+  .#{$prefix}-m-#{$i} {
+    margin-top: $size * $i+px;
+    margin-bottom: $size * $i+px;
+  }
+  .#{$prefix}-mt-#{$i} {
+    margin-top: $size * $i+px;
+  }
+  .#{$prefix}-mb-#{$i} {
+    margin-bottom: $size * $i+px;
+  } 
+  @include mq($until: tablet) {
+    .#{$prefix}-m-#{$i} {
+      margin-top: ($size * $i) - $size +px;
+      margin-bottom: ($size * $i) - $size +px;
+    }
+    .#{$prefix}-mt-#{$i} {
+      margin-top: ($size * $i) - $size +px;
+    }
+    .#{$prefix}-mb-#{$i} {
+      margin-bottom: ($size * $i) - $size +px;
+    } 
+  }
+}
+
+// Padding
+@for $i from 0 through $multiplier {
+  .#{$prefix}-p-#{$i} {
+    padding-top: $size * $i+px;
+    padding-bottom: $size * $i+px;
+  }
+  .#{$prefix}-pt-#{$i} {
+    padding-top: $size * $i+px;
+  }
+  .#{$prefix}-pb-#{$i} {
+    padding-bottom: $size * $i+px;
+  }
+  @include mq($until: tablet) {
+    .#{$prefix}-p-#{$i} {
+      padding-top: ($size * $i) - $size +px;
+      padding-bottom: ($size * $i) - $size +px;
+    }
+    .#{$prefix}-pt-#{$i} {
+      padding-top: ($size * $i) - $size +px;
+    }
+    .#{$prefix}-pb-#{$i} {
+      padding-bottom: ($size * $i) - $size +px;
+    } 
+  }
+}

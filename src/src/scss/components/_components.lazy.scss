@@ -1,0 +1,49 @@
+img {
+    &.lazy {
+        opacity: 0;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        background-color: $color-bg;
+        border-radius:5px;
+    }
+
+    &:not(.initial) {
+        transition: opacity 0.3s;
+    }
+
+    &.initial,
+    &.loaded,
+    &.error {
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
+
+    &:not([src]) {
+        visibility: hidden;
+    }
+
+}
+
+.lazy:not(img) {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.lazy:not(img)[data-ll-status='loaded'],
+.lazy:not(img)[data-ll-status='entered'] {
+    opacity: 1;
+}
+
+.c-lazy-wrapper {
+    width: 100%;
+    height: 0;
+    position: relative;
+    //background-color: $color-grey-light;
+    padding-bottom: 50%;
+    border-radius:5px;
+    overflow:hidden;
+}

@@ -1,0 +1,32 @@
+.c-event-page {
+    &__cta {
+        padding:72px 0;
+        text-align:center;
+        max-width:750px;
+        margin:0 auto;
+        &-title {
+            @include resp-font(22px, 28px, 1.4);
+            color:#0F3E3A;
+            margin-bottom:8px;
+        }
+        @include mq($until: desktop) {
+            padding:40px 0;
+        }
+    }
+}
+
+.single-event {
+    .c-blog-single {
+        @include mq($until: desktop) {
+            padding:0;
+        }
+    }
+    .c-layout-text-block {
+        @include mq($until: desktop) {
+            padding-bottom:40px;
+        }
+    }
+    .c-posts {
+        row-gap:0;
+    }
+}

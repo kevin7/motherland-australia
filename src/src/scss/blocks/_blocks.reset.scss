@@ -1,0 +1,66 @@
+#password-lost-form-wrap {
+
+    .som-password-sent-message {
+        font-size:14px;
+        padding:8px 16px;
+        margin-bottom:16px;
+        color:$color-green-200;
+        font-weight:500;
+        &.som-password-error-message {
+            color:$color-red;
+            background-color: lighten($color-red, 30%);
+            border-color:lighten($color-red, 30%);
+        }
+    }
+
+    fieldset {
+        legend {
+            font-size:26px;
+        }
+        p {
+            font-size:14px;
+        }
+
+        label {
+            margin-bottom:8px;
+            display:block;
+            font-weight:500;
+        }
+
+        input[type=password],
+        input[type=text] {
+            border-radius:8px;
+            height:56px;
+            background-color: #fff;
+            border:1px solid #fff;
+            padding:0 20px;
+            font-size:16px;
+            width:100%;
+            text-align:center;
+        }
+
+        .lostpassword-submit {
+            button {
+                background-color: $color-primary;
+                border:1px solid $color-black;
+                font-size:16px;
+                font-family:$font-family-secondary;
+                color:$color-white;
+                border-radius: 30px;
+                padding:15px 30px;
+                display:inline-block;
+                text-decoration:none;
+                font-weight:500;
+                transition:all 350ms ease;
+                text-align:center;
+                cursor:pointer;
+                border:1px solid $color-primary;
+                &:hover {
+                  background-color: lighten($color-primary, 10%);
+                  border:1px solid  lighten($color-primary, 10%);
+                  color:$color-white;
+                }
+            }
+        }
+    }
+}

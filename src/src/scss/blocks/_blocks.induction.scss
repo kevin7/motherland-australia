@@ -1,0 +1,27 @@
+.b-induction {
+    &__form {
+        margin-top:30px;
+    }
+
+    .gform_wrapper {
+        .gform_body {
+            .gform_fields {
+                .gfield {
+                    margin-bottom:10px;
+                    .gfield_label {
+                        margin-bottom:5px;
+                    }
+                    &.field_description_above {
+                        .gfield_description {
+                            padding-bottom:10px;
+                        }
+                    }
+                }
+            } 
+        }
+        .gform_footer {
+            text-align:center;
+        }
+    }
+
+}

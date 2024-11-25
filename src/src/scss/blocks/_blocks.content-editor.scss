@@ -1,0 +1,76 @@
+.b-cont-editor {
+    color:$color-font;
+    $c: &;
+
+    padding:80px 0 80px 0;
+
+    @include mq($until: desktop) {
+        padding: 40px 0 40px 0;
+    }
+    @include mq($until: tablet) {
+        padding:40px 0 40px 0;
+    }
+
+    &--small {
+        #{$c}__content {
+            width:100%;
+            max-width:700px;
+        }
+    }
+
+    &--medium {
+        #{$c}__content {
+            width:100%;
+            max-width:870px;
+        }
+    }
+
+    &__content {
+        width:100%;
+        margin:0 auto;
+
+        *:first-child {
+            margin-top:0 !important;
+        }
+        
+
+        h2, h3,h4, h5, h6 {
+            font-family:$font-family-secondary;
+            text-transform:none;
+            margin-top:64px !important;
+            margin-bottom:24px;
+            @include mq($until: tablet) {
+                margin-top:48px !important;
+            }
+        }
+
+        p {
+            margin-bottom:24px;
+        }
+
+        li {
+            margin-bottom:8px;
+        }
+
+        .alignright {
+            margin:15px 0 15px 15px;
+            float:right;
+          }
+        .alignleft {
+            margin:15px 15px 15px 0;
+            float:left;
+        }
+        .aligncenter {
+            margin:30px auto;
+            display:block;
+        }
+
+        .steph-name {
+            @include mq($until: tablet) {
+                width:200px !important;
+                height: auto !important;
+            }
+        }
+
+    }
+}

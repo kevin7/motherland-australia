@@ -1,0 +1,18 @@
+.c-alert {
+    padding:25px;
+    background-color: $color-black;
+    color:#fff;
+    display:flex;
+    a {
+        color:#fff;
+        text-decoration:underline;
+    }
+    i.icon {
+        display:block;
+        margin-right:15px;
+    }
+    p {
+        font-size:16px;
+        margin-bottom:0 !important;
+    }
+}

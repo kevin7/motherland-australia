@@ -1,0 +1,98 @@
+.b-village {
+    width:412px;
+    height:453px;
+    float:right;
+    img {
+        float:left;
+        width:33.33%;
+    }
+
+    @include mq($until: desktop) {
+        width:350px;
+        height:390px;
+    }
+
+    @include mq($until: tablet) {
+        float:none;
+        margin:40px auto 30px auto;
+    }
+
+    @include mq($until: mobile) {
+        width:300px;
+        height:330px;
+    }
+
+
+    &--start {
+        img {
+            transform:translateY(0) translateX(0) scale(1) !important;
+        }
+    }
+
+    &__item {
+
+        img {
+            position: relative;
+            transition:all 1s ease;
+        }
+
+        &-1 {
+            img {
+                border-radius:8px 0 0 0;
+                transform:translateY(-50px) translateX(-50px) scale(0.7);
+                transition-delay:.2s;
+            }
+        }
+        &-2 {
+            img {
+                transform:translateY(-40px) translateX(-20px) scale(0.6);
+                transition-delay:.7s;
+            }
+        }
+        &-3 {
+            img {
+                border-radius:0 8px 0 0;
+                transform:translateY(-20px) translateX(30px) scale(0.65);
+                transition-delay:.5s;                
+            }
+        }
+        &-4 {
+            img {
+                transform:translateY(-10px) translateX(-35px) scale(0.6);
+                transition-delay:.2s;
+            }
+        }
+        &-5 {
+            img {
+                transform:translateY(-10px) translateX(10px) scale(0.5);
+                transition-delay:.7s;
+            }
+        }
+        &-6 {
+            img {
+                transform:translateY(10px) translateX(20px) scale(0.65);
+                transition-delay:.4s;
+            }
+        }
+        &-7 {
+            img {
+                border-radius:0 0 0 8px;
+                transform:translateY(20px) translateX(-20px) scale(0.6);
+                transition-delay:.2s;
+            }
+        }
+        &-8 {
+            img {
+                transform:translateY(40px) translateX(-20px) scale(0.7);
+            }
+        }
+        &-9 {
+            img {
+                border-radius:0 0 8px 0;
+                transform:translateY(10px) translateX(30px) scale(0.6);
+                transition-delay:.4s;
+            }
+        }
+    }
+
+}

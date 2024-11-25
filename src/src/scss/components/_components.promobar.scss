@@ -1,0 +1,66 @@
+.c-promobar {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    background-color: #0F3E3A;
+    z-index:1000;
+    text-align:center;
+    &__wrapper {
+        color:#fff;
+        font-size:18px;
+        font-weight:500;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height:60px;
+        position: relative;
+        @include mq($until: desktop) {
+            font-size:16px;
+        }
+        @include mq($until: mobile) {
+            font-size:14px;
+            justify-content: space-between;
+        }
+        img {
+            @include mq($until: mobile) {
+                width:80px;
+            }
+        }
+        span.text {
+            display:inline-block;
+            padding:0 32px;
+            line-height:1.2;
+            text-align:left;
+            @include mq($until: mobile) {
+                padding:0 16px;
+            }
+        }
+        a {
+            position: static;
+            line-height:1.2;
+            font-size:18px;
+            padding:0;
+            margin-top:-4px;
+            white-space:nowrap;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 100;
+                top:0;
+                left:0;
+            }
+            @include mq($until: desktop) {
+                font-size:16px;
+            }
+            @include mq($until: mobile) {
+                font-size:14px;
+                span {
+                    display:none;
+                }
+            }
+        }
+    }
+}

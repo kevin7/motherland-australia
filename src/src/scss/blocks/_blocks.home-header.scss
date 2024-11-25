@@ -1,0 +1,121 @@
+.b-home-header {
+    position: relative;
+    &__bg {
+        background-position: 35% top;
+        background-repeat: no-repeat;
+        background-image: url(../images/hero-stripe.svg);
+        background-color: $color-secondary;
+        height:90%;
+        width:100%;
+        position: absolute;
+        top:0;
+        left:0;
+        @include mq($until: tablet) {
+            background-position:center top;
+        }
+    }
+        
+    &__line {
+        width:100%;
+        position: absolute;
+        bottom:50%;
+        text-align:center;
+        pointer-events: none;
+        
+        img {
+            width:100%;
+            min-width:1446px;
+            position: absolute;
+            left:50%;
+            transform:translateX(-50%);
+        }
+        @media (max-width: 1100px) {
+            bottom:60%;
+        }
+
+        .b-image-header--text & {
+            @include mq($until: tablet) {
+                bottom:75%;
+            }
+        }
+    }
+
+    &__wrapper {
+        min-height:850px;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        z-index:0;
+        padding-top:10%;
+        
+        
+        @include mq($until: tablet) {
+            min-height:50px;
+            display:block;
+            padding-top:30px;
+            padding-bottom:40px;
+        }
+    }
+
+    &__content {
+        width:50%;
+        p {
+            font-size:20px;
+            color:#6B8B89;
+            @include mq($until: tablet) {
+                font-size:16px;
+            }
+        }
+    
+        h1 {
+            margin-bottom:8px;
+            @include mq($until: desktop) {
+                font-size:40px;
+            }
+        }
+        @include mq($until: tablet) {
+            padding-bottom:30px;
+            width:100%;
+            text-align:center;
+        }
+
+
+    }
+
+    &__image {
+        position: absolute;
+        top:0;
+        right:-150px;
+        width:800px;
+        z-index:100;
+        text-align:right;
+        .c-lazy-wrapper {
+            background-color: transparent;
+            overflow:visible;
+        }
+
+        img {
+            background-color: transparent;
+        }
+        @media (max-width: 1500px) {
+            width:60%;
+            right:-50px;
+        }
+        @media (max-width: 1260px) {
+            right:0;
+        }
+
+        @include mq($until: tablet) {
+            position: relative;
+            right:0;
+            text-align:center;
+            width:100%;
+            img {
+                max-width:none;
+            }
+        }
+    }
+
+
+
+}

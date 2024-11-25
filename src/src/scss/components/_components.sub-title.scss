@@ -1,0 +1,9 @@
+.c-sub-title {
+    font-family:$font-family-primary;
+    font-weight:500;
+    text-transform: uppercase;
+    margin-bottom:32px;
+    @include mq($until: tablet) {
+        font-size:16px;
+    }
+}

@@ -1,0 +1,368 @@
+
+        
+.gform_wrapper {
+    margin-top:0;
+
+    .gform_validation_errors {
+        display:none;
+    }
+
+    .gform_fields {
+        grid-column-gap:24px;
+    }
+
+    .gform_heading {
+        display:none !important;
+    }
+    .gform_body {
+        .gform_fields {
+            .gfield {
+                padding:0;
+                margin:0 0 0px 0;
+                &.gfield_error {
+                    border:0;
+                    background-color: transparent;
+                    max-width:100% !important;
+                    width:100%;
+                    .gfield_label {
+                        margin-top:0;
+                    }
+                    .gfield_description.validation_message {
+                        color:#c00;
+                        font-weight:400;
+                        padding:0;
+                        border:0;
+                        background: transparent;
+                        font-size:14px;
+                    }
+                    .gfield_consent_label {
+                        color:$color-black;
+                    }
+                }
+
+                &.js-hidden {
+                    display:none !important;
+                }
+
+                &.js-invisible {
+                    height:0 !important;
+                    overflow:hidden !important;
+                }
+
+                &.js-readonly {
+                    font-weight:700;
+                    pointer-events: none;
+                }
+                &.js-group { 
+                    .ginput_container input[type=text] {
+                        font-weight:700;
+                        border:0;
+                        padding-left:0 !important;
+                        padding-right:0 !important;
+                        pointer-events: none;
+                    }
+                }
+
+                .gfield_label {
+                    font-weight:400;
+                    margin-bottom:8px;
+                    color:$color-black;
+                    font-size:16px;
+                    .gfield_required{
+                        //display:none;
+                    }
+                }
+                .ginput_container {
+                    
+                    select,
+                    textarea,
+                    input[type=text],
+                    input[type=tel],
+                    input[type=email],
+                    input[type=number],
+                    input[type=password] {
+                        font-family:$font-family-secondary;
+                        font-size:16px;
+                        appearance:none;
+                        width:100%;
+                        height:66px;
+                        border-radius:8px;
+                        background-color: $color-white;
+                        border:1px solid #D4DCDB;
+                        padding-left:15px !important;
+                        padding-right:15px !important;
+                        color:$color-black;
+                        font-weight:400;
+                        @include mq($until: tablet) {
+                            height:50px;
+                        }
+                        &:focus {
+                            outline:none;
+                            border-color: $color-black;
+                        }
+                        &::-webkit-input-placeholder { /* Edge */
+                            color:$color-font;
+                        }
+                        
+                        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                            color: $color-font;
+                        }
+                        
+                        &::placeholder {
+                            color:$color-font;
+                        }
+                    }
+                    textarea {
+                        height:150px;
+                        padding-top:16px;
+                    }
+                    select {
+                        font-family:$font-family-secondary;
+                        padding-top:0;
+                        padding-bottom:0;
+                        line-height:1.4;
+                    }
+                    &.ginput_container_select {
+                        position: relative;
+                        &:after {
+                            content: '\e802';
+                            position: absolute;
+                            font-family:'fontello';
+                            top:50%;
+                            right:10px;
+                            transform:translateY(-50%);
+                            width: 15px;
+                            height: 15px;
+                            z-index: 100;
+                            text-align:center;
+                            pointer-events: none;
+                            line-height:15px;
+                            font-size:20px;
+                            font-weight:700;
+                        }
+                    }
+
+                    .ginput_container_coupon {
+                        display:flex;
+                        align-items: center;
+                        position: relative;
+                        input[type=button] {
+                            position: absolute;
+                            right:16px;
+                            top:50%;
+                            border:1px solid $color-primary;
+                            border-radius:40px;
+                            font-family:$font-family-primary;
+                            font-size:16px;
+                            padding:8px 24px;
+                            color:$color-primary;
+                            background-color: #fff;
+                            transform:translateY(-50%);
+                            transition:all .3s ease;
+                            cursor:pointer;
+                            &:hover {
+                                background-color: $color-primary;
+                                color:#fff;
+                            }
+                        }
+                        img {
+                            position: absolute;
+                            top:50%;
+                            transform:translateY(-50%);
+                            right:24px;
+                        }
+                    }
+
+                    &.ginput_container_consent {
+                        font-size:14px;
+                        color:$color-black;
+                        .gfield_required {
+                            display:none;
+                        }
+                    }
+
+                    .gfield_radio {
+                        margin:10px 0 0 0;
+                        .gchoice {
+                          position: relative;
+                          display:inline-block;
+                          white-space: nowrap;
+                          margin-right:20px;
+            
+                          &:hover {
+                            label {
+                              &:after {
+                                //border:1px solid $color-primary;
+                              }
+                            }
+                          }
+                
+                          input[type="radio"] {
+                            opacity:0;
+                            outline:none;
+                            z-index:100;
+                            width:24px;
+                            height:24px;
+                            top:0;
+                            left:0;
+                            position: absolute;
+                            margin-bottom:0;
+                            appearance: none;
+                            cursor: pointer;
+                            margin-top:0;
+
+                            + label {
+                              cursor: pointer;
+                            }
+                            &:checked + label {
+                              &:after {
+                              }
+                              &:before {
+                                opacity:1;
+                              }
+                            }
+                          }
+                
+                          label {
+                            width:100%;
+                            position: relative;
+                            height:24px;
+                            padding-left:35px;
+                            
+                            &:after {
+                              content:"";
+                              background:transparent;
+                              width:24px;
+                              height:24px;
+                              border:1px solid $color-grey-light;
+                              display:block;
+                              position: absolute;
+                              left:0;
+                              top:0;
+                              border-radius:30px;
+                              z-index: 0;
+                              pointer-events:none;
+                              transition:all .3s ease;
+                              
+                            }
+                            &:before {
+                              content:"";
+                              display:block;
+                              position: absolute;
+                              width: 16px;
+                              height: 16px;
+                              border-radius:30px;
+                              left:4px;
+                              top: 4px;
+                              text-align:center;
+                              opacity:0;
+                              z-index:1;
+                              background-color: $color-primary;
+                              background-repeat: no-repeat;
+                              background-position: center center;
+                              background-size: 15px 15px;
+                              transition:all .3s ease;
+                            }
+                          }
+                        
+                        }
+                      }
+
+                }
+            }
+        }
+    }
+    .gform_footer {
+        margin:0;
+        padding:24px 0 0 0 !important;
+        text-align:center;
+        position: relative;
+        img {
+            position: absolute;
+            top:50%;
+            margin-top:1px;
+            transform:translateY(-50%);
+            right:0;
+            @include mq($until: tablet) {
+                right:-20px;
+            }
+            @include mq($until: mobile) {
+                right:20px;
+                margin-top:7px;
+            }
+        }
+        @include mq($until: mobile) {
+            .c-button {
+                width:100%;
+            }
+        }
+    }
+    @media (max-width: 640px) {
+        .gform_body {
+        .gform_fields {
+            .gfield {
+            &.gf_left_half {
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+                padding:0;
+                float: none;
+            }
+            &.gf_right_half {
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+                padding:0;
+                float: none;
+            }
+            }
+        }
+        }
+        .gform_footer {
+        .btn {
+            width:100%;
+        }
+        }
+    }
+    }
+
+    .gform_confirmation_message {
+        padding:25px 25px !important;
+        background-color: rgba(#fff, 0.15);
+        border-radius:8px;
+        text-align:center;
+        background-color: $color-black;
+        color:#fff;
+        font-size:16px;
+        h1, h2, h3, h4, h5, h6 {
+            color:#fff;
+        }
+
+        br {
+            display:none;
+        }
+
+        img {
+            margin-bottom:24px;
+            display:inline-block;
+        }
+
+        h6,
+        p {
+            margin-bottom:24px;
+            width:100%;
+            text-align:center;
+            br {
+                display:block;
+            }
+        }
+
+        p {
+            margin-bottom:0;
+            font-size:16px;
+        }
+
+        @include mq($until: tablet) {
+        }
+    }
+

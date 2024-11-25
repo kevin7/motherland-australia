@@ -1,0 +1,25 @@
+.c-blog-video-block {
+    padding-bottom: 80px;
+    @include mq($until: desktop) {
+        padding-bottom:52px;
+    }
+    @include mq($until: tablet) {
+        .o-wrapper {
+            padding:0;
+        }
+    }
+    position: relative;
+    &__wrapper {
+        max-width:880px;
+        margin:0 auto;
+    }
+    .c-video-responsive {
+        padding-bottom: 56.25%;
+        border-radius:10px;
+        overflow:hidden;
+        @include mq($until: tablet) {
+            border-radius:0;
+        }
+    }
+    
+}

@@ -1,0 +1,131 @@
+.c-dropdown {
+  $c: &;
+  position: relative;
+  display:inline-block;
+  font-size:16px;
+  cursor:pointer;
+  width:230px;
+  font-weight:500;
+  color:$color-secondary;
+
+  @include mq($until: tablet) {
+    width:100%;
+    display:block;
+
+    &.single.search {
+      #{$c}__label {
+        display:none;
+      }
+    }
+
+  }
+
+  &--active {
+    #{$c}__label {
+      border-radius:8px 8px 0 0;
+    }
+    #{$c}__list {
+      opacity:1;
+      visibility:visible;
+    }
+  }
+  &__label {
+    border:1px solid $color-secondary;
+    padding:12px 30px 12px 20px;
+    font-weight:500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:100%;
+    border-radius:2px;
+
+    @include mq($until: tablet) {
+      &.search {
+        border:0;
+        background-color:$color-secondary;
+        border-radius:0;
+        font-weight:700;
+      }
+    }
+    
+    &:after {
+      content: '\e802';
+      position: absolute;
+      top:50%;
+      transform:translateY(-50%);
+      right:15px;
+      pointer-events: none;
+      font-size:20px;
+      z-index: 100;
+      font-family:'fontello';
+      color:$color-secondary;
+    } 
+  }
+
+  &__list {
+    position: absolute;
+    top:calc(100% - 1px);
+    left:0;
+    width:100%;
+    background-color: #fff;
+    z-index:500;
+    border:1px solid $color-secondary;
+    display:block;
+    transition:all .3s ease;
+    opacity:0;
+    visibility:hidden;
+    max-height:280px;
+    overflow-y:auto;
+    border-radius:0 0 8px 8px;
+    @include mq($until: tablet) {
+      &.search {
+        border:0;
+        position:relative;
+        top:0;
+        opacity:1;
+        visibility:visible;
+      }
+    }
+  }
+  &__item {
+    padding:14px 20px 14px 50px;
+    position: relative;
+    cursor:pointer;
+    line-height:1;
+    border-bottom:1px solid $color-line;
+    &:before {
+      content:'';
+      position: relative;
+      width: 20px;
+      height: 20px;
+      z-index: 100;
+      display:block;
+      position: absolute;
+      top:50%;
+      transform:translateY(-50%);
+      left:20px;
+      border-radius:100px;
+      border:1px solid $color-secondary;
+    }
+    &:after {
+      position: absolute;
+      z-index: 100;
+      font-family:'fontello';
+      left:24px;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:12px;
+      display:none;
+    }
+    &.selected {
+      &:before {
+        background-color: $color-primary;
+        border-color:$color-primary;
+      }
+      &:after {
+        display:block;
+        color:#fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.b-donation {
+    position: relative;
+    padding-top:220px;
+    padding-bottom:40px;
+    @include mq($until: desktop) {
+        padding-top:120px;
+    }
+    &:before {
+        content:'';
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 421px;
+        z-index: 0;
+        background: linear-gradient(180deg, #FFF6EF 0%, rgba(255, 246, 239, 0) 100%);
+    }
+
+    &__wrapper {
+        position: relative;
+        z-index:10;
+        max-width:630px;
+        margin:0 auto;
+        h1 {
+            text-align:center;
+            color:#0F3E3A;
+        }
+    }
+
+    &__button {
+        text-align:center;
+        margin-bottom:60px;
+        a {
+            background-color: $color-primary;
+            color:$color-secondary;
+            &:hover {
+                background-color: lighten($color-primary, 5%);
+                border-color: lighten($color-primary, 5%);
+            }
+        }
+    }
+    &__account {
+        p {
+            line-height:1.8;
+        }
+        h2 {
+            margin-bottom:80px;
+            padding-top:30px;
+        }
+    }
+
+    &__footnote {
+        display:flex;
+        max-width:880px;
+        margin:0 auto;
+        justify-content: space-between;
+        color:#6B8B89;
+        @include mq($until: tablet) {
+            display:block;
+        }
+        &-content {
+            width: calc(100% - 180px);
+            flex-basis: calc(100% - 180px);
+            @include mq($until: tablet) {
+                width:100%;
+                flex-basis:100%;
+            }
+            p {
+                font-size:14px;
+            }
+        }
+        &-image {
+            width:100px;
+            flex-basis:100px;
+            order:2;
+            @include mq($until: tablet) {
+                float:right;
+                margin:0 0 20px 20px;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+}

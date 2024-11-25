@@ -1,0 +1,21 @@
+.c-event-cost {
+    &__price {
+        display:flex;
+        align-items: flex-start;
+        line-height:1.2;
+        margin-bottom:24px;
+        span {
+            font-size:16px;
+            padding-right:8px;
+            padding-top:2px;
+        }
+        strong {
+            color:#0F3E3A;
+            font-size:24px;
+            font-weight:400;
+        }
+    }
+    &__note {
+        font-size:16px;
+    }
+}

@@ -1,0 +1,88 @@
+.c-member {
+    position: relative;
+    overflow:hidden;
+    border-radius:8px;
+    cursor:pointer;
+    $c: &;
+
+    &:hover {
+        #{$c}__content {
+            &-name {
+               // color:$color-primary;
+            }
+        }
+        .c-lazy-wrapper {
+            img {
+                transform:scale(1.15);
+            }
+        }
+    }
+
+    &__content {
+        position: absolute;
+        width:100%;
+        bottom:0;
+        left:0;
+        color:#fff;
+        z-index:100;
+        padding:0 26px 23px 26px;
+        &-name {
+            font-size:24px;
+            font-weight:600;
+            margin-bottom:4px;
+            line-height:1.2;
+            transition:all .3s ease;
+        }
+        &-pos {
+            font-size:18px;
+        }
+        @include mq($until: desktop) {
+            padding:15px;
+            &-name {
+                font-size:20px;
+            }
+            &-pos {
+                font-size:16px;
+            }
+        }
+    }
+
+    .c-lazy-wrapper {
+        border-radius:8px;
+        position: relative;
+        z-index:0;
+        &:after {
+            content:'';
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background: linear-gradient(180deg, rgba(10, 29, 27, 0) 61.46%, #0A1D1B 100%);
+            opacity: 0.8;
+            display:block;
+        }
+        img {
+            border-radius:8px;
+            position: absolute;
+            object-fit: cover;
+            object-position: center;
+            height:100%;
+            transform:scale(1);
+            transition:all .3s ease;
+        }
+    }
+
+
+    &:nth-child(1),
+    &:nth-child(2) {
+        #{$c}__content {
+            padding:0 40px 25px 40px;
+            @include mq($until: desktop) {
+                padding:15px;
+            }
+        }
+    }
+
+}
