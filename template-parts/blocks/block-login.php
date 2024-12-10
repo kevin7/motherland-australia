@@ -5,12 +5,14 @@
     $admin_login_bg = get_field('admin_login_bg', 'option');
     $admin_login_bg_mobile = get_field('admin_login_bg_mobile', 'option');
     $redirection = get_field('redirection');
-    $referer = isset($_GET['referrer']) ? $_GET['referrer'] : false;
+    $referrer = isset($_GET['referrer']) ? $_GET['referrer'] : false;
 
-    if (!$referer && $redirection) {
-        $referer = $redirection['url'];
+    if (!$referrer && $redirection) {
+        $redirect_to = $redirection['url'];
+    } else if ($referrer && $redirection) {
+        $redirect_to = $referrer;
     } else {
-        $referer = home_url();
+        $redirect_to = home_url();
     }
 
 ?>
@@ -52,7 +54,7 @@
                     </div>
                     <div>
                         <input type="hidden" id="security" name="security" value="<?php echo wp_create_nonce('ajax-login-nonce'); ?>">
-                        <input type="hidden" name="redirect_to" id="redirect_to" value="<?=$referer?>" />
+                        <input type="hidden" name="redirect_to" id="redirect_to" value="<?=$redirect_to?>" />
                         <input type="submit" name="wp-submit" id="wp-submit" class="c-button c-button--primary" value="Log In" />
                     </div>
                 </div>

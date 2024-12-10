@@ -3,7 +3,7 @@ $admin_logo = get_field('admin_login_logo', 'option');
 $admin_logo_mobile = get_field('admin_mobile_logo', 'option');
 $admin_tracking_header = get_field('admin_tracking_header', 'option');
 
-//if (!is_user_logged_in()) wp_redirect('/login/?referrer=' . get_the_permalink(), 302)
+if (!is_user_logged_in()) wp_redirect('/login/?referrer=' . get_the_permalink(), 302)
 
 ?>
 <!doctype html>
